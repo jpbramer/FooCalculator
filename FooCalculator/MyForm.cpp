@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "Form.h"
 using namespace System;
 using namespace System::Windows::Forms;
 [STAThread]
@@ -7,6 +7,6 @@ using namespace System::Windows::Forms;
 void main() {
 	Application::EnableVisualStyles();
 	Application::SetCompatibleTextRenderingDefault(false);
-	FooCalculator::MyForm form;
+	FooCalculator::Form form;
 	Application::Run(% form);
 }

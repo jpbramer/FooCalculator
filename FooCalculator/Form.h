@@ -10,24 +10,27 @@ namespace FooCalculator {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm
+	/// Summary for Form
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class Form : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		Form(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			// Prevents window resizing
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+
+			// Prevents maximizing
+			this->MaximizeBox = false;
+
 		}
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~Form()
 		{
 			if (components)
 			{
@@ -107,7 +110,7 @@ namespace FooCalculator {
 			this->button1->TabIndex = 3;
 			this->button1->Text = L"Calculate";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &Form::button1_Click);
 			// 
 			// textBox1
 			// 
@@ -186,14 +189,14 @@ namespace FooCalculator {
 			this->label4->TabIndex = 0;
 			this->label4->Text = L"This page is a work in progress. Additional features on the way!";
 			// 
-			// MyForm
+			// Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(560, 394);
 			this->Controls->Add(this->tabControl1);
 			this->Margin = System::Windows::Forms::Padding(4);
-			this->Name = L"MyForm";
+			this->Name = L"Form";
 			this->Text = L"FooCalculator";
 			this->tabControl1->ResumeLayout(false);
 			this->tabPage1->ResumeLayout(false);
